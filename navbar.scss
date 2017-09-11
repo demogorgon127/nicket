@@ -1,7 +1,8 @@
 $fromTopToDropdown: 50px;
 $dropdownWidth: 450px;
 $dropdownHeight: 600px;
-
+$linkGroupPrimaryHeight: 300px;
+$linkGroupSecondaryHeight: 300px;
 
 body {
   background-color: #0396FF;
@@ -19,7 +20,30 @@ ul, li {
   background-color: white;
   width: 450px;
   height: 600px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  overflow: hidden;
+  & * ul {
+    display: flex;
+    flex-direction: column;
+    & li {
+      margin-top: 20px;
+      margin-left: 40px;
+    }
+  }
 }
+
+.linkGroupPrimary {
+  height: $linkGroupPrimaryHeight;
+  background-color:white; 
+}
+
+.linkGroupSecondary {
+  height: $linkGroupPrimaryHeight;
+  background-color:#ABDCFF; 
+}
+
 
 .root {
   display: flex;

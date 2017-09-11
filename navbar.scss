@@ -1,0 +1,30 @@
+$fromTopToDropdown: 30px;
+
+body {
+  background-color: #0396FF;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown {
+  position: absolute;
+  top: $fromTopToDropdown;
+  background-color: white;
+}
+
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.active {
+  display: flex;
+}
+
+.closed {
+  display: none;
+}

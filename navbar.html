@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>navbar</title>
+  <link rel="stylesheet" href="navbar.css">
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+  <script src="navbar.js"></script>
+</head>
+<body>
+  <header class="globalNavig">
+    <div class="navContainer">
+      <ul class="root">
+        <li class="logo">Nicekit</li>
+        <li class="nelogo">
+          <a id="dropdownTrigger">Products</a>
+          <a>Support</a>
+          <a>Affiliates</a>
+          <a>Contact us</a>
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown closed">
+      <div class="linkgroup">
+        <ul class="productsPrimary"></ul>
+          <li>
+            <a href="#">TimeBoss</a>
+            <a href="#">NkTimeTracker</a>
+          </li>
+      </div>
+      <div class="linkgroup">
+        <ul class="productsSecondary"></ul>
+          <li>
+            <a href="#">SnapaShot</a>
+            <a href="#">AniReminder</a>
+            <a href="#">EasyTables</a>
+            <a href="#">EasyNetMonitor</a>
+            <a href="#">.Net modules</a>
+          </li>        
+    </div>
+  </header>
+</body>
+</html>

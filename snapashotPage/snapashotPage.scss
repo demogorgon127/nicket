@@ -1,0 +1,213 @@
+$fromTopToDropdown: 58px;
+$dropdownWidth: 450px;
+$dropdownHeight: 600px;
+$linkGroupPrimaryHeight: 300px;
+$linkGroupSecondaryHeight: 300px;
+$sidePaddings: 20px;
+$maxWidth: 1040px;
+$textBlue: #1066A3;
+$textGreen: #0EAA54;
+
+@mixin basicallyAllText {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding-left: $sidePaddings;
+  display: flex;
+  align-items: center;
+}
+
+
+body {
+  font-size: 20px;
+  font-family: Camphor,Open Sans,Segoe UI,sans-serif;
+  font-weight: 400;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown {
+  position: absolute;
+  top: $fromTopToDropdown;
+  left: 0;
+  background-color: white;
+  width: 450px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
+  & * ul {
+    display: flex;
+    flex-direction: column;
+    & li {
+      margin-top: 20px;
+      margin-left: 40px;
+      & a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.linkGroupPrimary {
+  height: $linkGroupPrimaryHeight;
+  background-color:white; 
+}
+
+.linkGroupSecondary {
+  height: $linkGroupPrimaryHeight;
+  background-color:#ABDCFF; 
+}
+
+
+.root {
+  user-select: none;   
+  background-color: #0396FF;
+  // cursor: default;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  height: 50px;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  align-items: center;
+  padding-left: $sidePaddings;
+  & li a { 
+    display: inline-flex;
+    margin: 0 10px 0;
+    line-height: 50px;
+    &:hover {
+      color:#89C9F1;
+    }
+    &:not(#dropdownTrigger) {
+      cursor: pointer;
+    }
+  }
+  & li #dropdownTrigger {
+    cursor: default;
+  }
+  & .nelogo {
+    padding-right: $sidePaddings;
+  }
+}
+
+.active {
+  display: flex;
+}
+
+.closed {
+  display: none;
+}
+
+.backArtWork {
+  display: block;
+  position: absolute;
+  height: 500px;  
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  background-color: #0396FF;
+}
+
+#compare {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+  & > .compareContainer {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    width: 1040px;
+    height: 100%;
+    justify-content: space-between;
+    & div {
+      min-width: 338px;
+    //   max-width: 20%;
+    //   height: 100%;
+      width: 49%;
+      height: 100%;
+      background-color: white; 
+      box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+      & h1, p {
+        padding-left: $sidePaddings;
+      }
+    }
+  }
+}
+
+#pitch {
+  @include basicallyAllText();
+  height: 500px;
+  color: white;
+  & h1, p {
+    width: 90%;
+  }
+}
+
+#whyTimeBoss {
+  @include basicallyAllText();
+  height: 500px;
+  & h1, p {
+    width: 50%;
+    text-align: right;
+  }
+  & h1 {
+    color: $textGreen
+  }
+  & p {
+    color: $textBlue;
+  }
+}
+
+#whyTimeBoss {
+  @include basicallyAllText();
+  height: 500px;
+  & h1, p {
+    width: 50%;
+    text-align: right;
+  }
+  & h1 {
+    color: $textGreen
+  }
+  & p {
+    color: $textBlue;
+  }
+}
+
+.contentPanelsMain {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: $maxWidth;
+  margin: 0 auto 20px;
+  // padding-left: $sidePaddings;
+  align-items: center;
+  justify-content: space-between;
+  & .contentPanel {
+    width: 33%;
+    height: 200px;
+    margin-bottom: 20px;
+    background-color: white; 
+    & > p {
+      font-size: 90%;
+      color: $textBlue;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+#features {
+  & > h2 {
+    text-align: center;
+  }
+}

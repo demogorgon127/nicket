@@ -34,6 +34,17 @@ $(document).ready(function () {
     }
   });
   
+  var firstImageSelector = $('.featureImg div:nth-child(1)');
+  var secondImageSelector = $('.featureImg div:nth-child(2)');
+
+  $('#toggleableArea').mouseenter(function() {
+      secondImageSelector.removeClass('secondToggleable').addClass('firstToggleable');
+      firstImageSelector.removeClass('firstToggleable').addClass('secondToggleable');
+  });
+  $('#toggleableArea').mouseleave(function() {
+      firstImageSelector.removeClass('secondToggleable').addClass('firstToggleable');
+      secondImageSelector.removeClass('firstToggleable').addClass('secondToggleable');
+  });
 
   //для управления dropdown с помощью кликов
   /* $(document).hover(function(e) {

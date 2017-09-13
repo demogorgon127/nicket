@@ -7,6 +7,8 @@ $sidePaddings: 20px;
 $maxWidth: 1040px;
 $textBlue: #1066A3;
 $textGreen: #0EAA54;
+$backBlue: #0396FF;
+$backGreen: #CCECDA;
 
 @mixin basicallyAllText {
   max-width: $maxWidth;
@@ -18,9 +20,22 @@ $textGreen: #0EAA54;
 
 
 body {
-  font-size: 20px;
+  font-size: 17px;
+  line-height: 26px;
   font-family: Camphor,Open Sans,Segoe UI,sans-serif;
   font-weight: 400;
+  & h1 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 43px;
+    margin: 0;
+  }
+  & h3 {
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 38px;
+    margin: 0;
+  }
 }
 
 ul, li {
@@ -108,7 +123,7 @@ ul, li {
 .backArtWork {
   display: block;
   position: absolute;
-  height: 500px;  
+  height: 600px;  
   width: 100%;
   top: 0;
   left: 0;
@@ -168,21 +183,6 @@ ul, li {
   }
 }
 
-#whyTimeBoss {
-  @include basicallyAllText();
-  height: 500px;
-  & h1, p {
-    width: 50%;
-    text-align: right;
-  }
-  & h1 {
-    color: $textGreen
-  }
-  & p {
-    color: $textBlue;
-  }
-}
-
 .contentPanelsMain {
   display: flex;
   flex-direction: row;
@@ -203,5 +203,138 @@ ul, li {
       padding: 0;
       margin: 0;
     }
+  }
+}
+
+#happyUsers {
+  background-color: $backBlue;
+  & > div {
+    max-width: $maxWidth;
+    margin: 0 auto;
+  }
+}
+
+#featuresSidebySide {
+  background-color: $backGreen;
+}
+
+#featuresSidebySide > div {
+  & > h1 {
+    text-align: center;
+    padding: 5vh 0;
+    // color: white;
+  }
+  display: flex;
+  flex-direction: column;
+  & .oneFeatureContainer {
+    border-bottom: 1px solid white;
+    &:nth-child(even) {
+      flex-direction: row;
+    }
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+  }
+  & .oneFeatureSidebySide {
+    max-width: $maxWidth;
+    margin: 0 auto;
+    padding: 10vh 0;
+    flex-direction: inherit;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > .featureText {
+      height: 100%;
+      width: 30%;
+      padding: 0 5vh;
+      align-items: center;
+      & > h3, p {
+        margin: 0;
+        align-items: center;
+        color: $textBlue;
+        vertical-align: middle;
+      }
+      & > h3 {
+        color: $textGreen;
+      }
+      & p {
+        margin-top: 2vh;
+      }
+    }
+    & > .featureImg {
+      position: relative;
+      height: 100%;
+      width: 60%;
+      padding: 0 5vh;
+      & img {
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 100px rgba(50,50,93,.1), 0 0 35px rgba(50,50,93,.15)
+      }
+      & > .firstToggleable {
+        position: relative;
+        z-index: 4;
+        // transform: translate(2vh,1.5vh);
+      }
+      & > .secondToggleable {
+        padding: 0 5vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-1.5vh,-2vh);
+      }
+    }
+  }
+}
+
+.commonButton {
+  margin-right: 13px;
+  color: #fff;
+  background: #3ecf8e;
+  text-shadow: 0 1px 3px rgba(36,180,126,.4);
+  white-space: nowrap;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 14px;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+  text-decoration: none;
+  &:hover {
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: translateY(1.5px);
+  }
+}
+
+.nonCommonButton {
+  margin-right: 13px;
+  color: #6772e5;
+  background: white;
+  text-shadow: 0 1px 3px rgba(36,180,126,.4);
+  white-space: nowrap;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 14px;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+  text-decoration: none;
+  &:hover {
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: translateY(1.5px);
   }
 }
